@@ -75,7 +75,7 @@ jobs:
             ${{ runner.os }}-gatsby-build-
       - name: .env setting
         run: |
-          echo "GATSBY_APP_HOST=${{ vars.GATSBY_APP_HOST }}" >> .env
+          echo "GATSBY_APP_HOST=${{ secrets.GATSBY_APP_HOST }}" >> .env
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }} --force
       - name: Build with Gatsby
