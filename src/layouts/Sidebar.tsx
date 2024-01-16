@@ -13,7 +13,7 @@ interface INode {
   excerpt: string;
 }
 
-const Sidebar = ({ data }: { data: INode[] }) => {
+const Sidebar = ({ data, siteUrl }: { data: INode[]; siteUrl: string }) => {
   const location = useLocation();
 
   return (
@@ -22,7 +22,7 @@ const Sidebar = ({ data }: { data: INode[] }) => {
         {data.map((node: INode) => (
           <li>
             <MenuLink
-              to={`/blog/${node.frontmatter.slug}`}
+              to={`${siteUrl}/blog/${node.frontmatter.slug}`}
               key={node.id}
               className={
                 location.pathname.split('/').at(-2) === node.frontmatter.slug

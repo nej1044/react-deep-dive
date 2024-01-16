@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { CustomLink } from '../styles/global';
 
-const Header = ({ title }: { title: string }) => {
+const Header = ({ title, siteUrl }: { title: string; siteUrl: string }) => {
   return (
     <StyledHeader>
-      <CustomLink to="/">
+      <CustomLink to={`${siteUrl}`}>
         <h1>{title}</h1>
       </CustomLink>
     </StyledHeader>

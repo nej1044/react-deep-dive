@@ -29,9 +29,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <Wrapper>
-      <Header title={data.site.siteMetadata.title} />
+      <Header
+        title={data.site.siteMetadata.title}
+        siteUrl={process.env.REACT_APP_HOST}
+      />
       <FlexWrapper>
-        <Sidebar data={data.allMdx.nodes} />
+        <Sidebar
+          data={data.allMdx.nodes}
+          siteUrl={process.env.REACT_APP_HOST}
+        />
         <Main>{children}</Main>
       </FlexWrapper>
     </Wrapper>
