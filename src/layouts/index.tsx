@@ -27,17 +27,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     }
   `);
 
+  const siteUrl = process.env.GATSBY_APP_HOST;
+
   return (
     <Wrapper>
-      <Header
-        title={data.site.siteMetadata.title}
-        siteUrl={process.env.REACT_APP_HOST}
-      />
+      <Header title={data.site.siteMetadata.title} siteUrl={siteUrl} />
       <FlexWrapper>
-        <Sidebar
-          data={data.allMdx.nodes}
-          siteUrl={process.env.REACT_APP_HOST}
-        />
+        <Sidebar data={data.allMdx.nodes} siteUrl={siteUrl} />
         <Main>{children}</Main>
       </FlexWrapper>
     </Wrapper>
